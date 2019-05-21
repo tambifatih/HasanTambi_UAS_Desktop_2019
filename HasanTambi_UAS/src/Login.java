@@ -1,3 +1,7 @@
+
+import static java.lang.ProcessBuilder.Redirect.from;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,7 +13,8 @@
  * @author petik
  */
 public class Login extends javax.swing.JFrame {
-
+    Hompage from = new Hompage();
+    
     /**
      * Creates new form Login
      */
@@ -47,8 +52,18 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setText("Password");
 
         btnLogin.setText("Login");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
 
         btnExit.setText("Exit");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -116,6 +131,30 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        // TODO add your handling code here:
+//        if (user.getText().isEmpty()){
+//            JOptionPane.showMessageDialog(null, "");
+//        }else if (pass.getText().isEmpty()){
+//            JOptionPane.showMessageDialog(null, "kolom nama tidak boleh kosong");
+//        {
+//            masukanData();
+//         }
+//        
+//        
+//        from.setVisible(true);
+        if(user.getText().trim().equals("admin") && pass.getText().trim().equals("admin")){
+            Object Selamat = null;
+        JOptionPane.showMessageDialog(null, Selamat anda masuk sebagai admin);
+        }
+        
+    }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_btnExitActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -161,4 +200,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTextField pass;
     private javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables
+
+    private void masukanData() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
